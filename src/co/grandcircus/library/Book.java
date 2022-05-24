@@ -1,5 +1,7 @@
 package co.grandcircus.library;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -32,6 +34,7 @@ public class Book {
 			System.out.println(this.title + " has been RECYCLED. Condition reset to 10.");
 		}
 		this.status = Status.ON_SHELF;
+		this.dueDate = null;
 	}
 
 	public void checkOut() {
@@ -40,9 +43,8 @@ public class Book {
 		Calendar calendar = Calendar.getInstance();
 		calendar.add(Calendar.DATE, 14);
 		setDueDate(calendar.getTime());
-		System.out.println(this.title + " is due on: " + calendar.getTime());
-
-
+		DateFormat df = new SimpleDateFormat("MM/dd/yyyy");
+		System.out.println(this.title + " is due on: " + df.format(getDueDate()));
 	}
 
 	public String getTitle() {
