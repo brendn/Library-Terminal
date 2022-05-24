@@ -1,6 +1,7 @@
 package co.grandcircus.library;
 
 import java.util.Arrays;
+import java.util.Formatter;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -76,24 +77,44 @@ public class Library {
                 }
             }
         } else if (s.toLowerCase().startsWith("search")) {
-            /*
-             * The search command will attempt to find either a book with a matching name or print a list
-             * of books by a matching author
-             *
-             * TODO: Put both results in a list and let the user pick through those
-             */
-            String in = s.substring(7);
-            if (inventory.getBookByTitle(in) != null) {
-                Book book = inventory.getBookByTitle(in);
-                System.out.println("Book found! " + book.getTitle());
-                ///todo: the other stuff here
-            } else if (inventory.getBooksByAuthor(in) != null) {
-                Book[] books = inventory.getBooksByAuthor(in);
-                Arrays.stream(books).forEach(book -> System.out.println(book.getTitle()));
-            } else {
-                System.out.println("No results found for " + in);
+            if(s.toLowerCase().equals("search author")){
+                System.out.println("Which author's books do you want to check? ");
+                String author= scanner.nextLine();
+                Formatter fmt = new Formatter();
+                fmt.format("%40s %40s %40s\n", "BOOK NAME", "AUTHOR NAME", "STATUS");
+                fmt.format("%40s %40s %40s\n",""," "," ");
+                Book[] booksSearchedByAuthor = inventory.getBooksByAuthor(author);
+                if(booksSearchedByAuthor[0]!=null){
+
+                   // System.out.println(booksSearchedByAuthor);
+                    for (int i=0;i<booksSearchedByAuthor.length;i++){
+//                        System.out.println(booksSearchedByAuthor[i]);
+                        if(booksSearchedByAuthor[i] != null){
+                            fmt.format("%40s %40s %40s\n", booksSearchedByAuthor[i].getTitle(),booksSearchedByAuthor[i].getAuthor(),booksSearchedByAuthor[i].getStatus());
+
+                        }
+                    }
+                    System.out.println(fmt);
+                }
+                else {
+                    System.out.println("No results found for " + author);
+                }
+
+            }
+            else{
+                System.out.println("Which book do you want to check? ");
+                String searchBook = scanner.nextLine();
+                boolean bookFound=inventory.getBookByTitle(searchBook);
+                if(bookFound){
+                    System.out.println("Book found! " + searchBook);
+                }
+                else {
+                    System.out.println("No results found for " + searchBook);
+                }
+
             }
         }
+        
         System.out.println("Goodbye!");
         scanner.close();
     }
