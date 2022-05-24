@@ -1,5 +1,7 @@
 package co.grandcircus.library;
 
+import java.util.Arrays;
+import java.util.Locale;
 import java.util.Scanner;
 
 import co.grandcircus.library.Book.Status;
@@ -28,6 +30,7 @@ public class Library {
         System.out.println("Welcome to the Grand Circus Library!");
         System.out.printf("We currently have %d books. To see what we have, type \'list\'!%n", inventory.getMainBookList().size());
         System.out.println("To return a book, type \'return\'.");
+        System.out.println("To search for a book, type \'search author\' or \'search title\'..");
 
         String s = scanner.nextLine();
 
@@ -72,8 +75,26 @@ public class Library {
                     moreReturns = false;
                 }
             }
+        } else if (s.toLowerCase().startsWith("search")) {
+            /*
+             * The search command will attempt to find either a book with a matching name or print a list
+             * of books by a matching author
+             *
+             * TODO: Put both results in a list and let the user pick through those
+             */
+            String in = s.substring(7);
+            if (inventory.getBookByTitle(in) != null) {
+                Book book = inventory.getBookByTitle(in);
+                System.out.println("Book found! " + book.getTitle());
+                ///todo: the other stuff here
+            } else if (inventory.getBooksByAuthor(in) != null) {
+                Book[] books = inventory.getBooksByAuthor(in);
+                Arrays.stream(books).forEach(book -> System.out.println(book.getTitle()));
+            } else {
+                System.out.println("No results found for " + in);
+            }
         }
-		System.out.println("Goodbye!");
+        System.out.println("Goodbye!");
         scanner.close();
     }
 

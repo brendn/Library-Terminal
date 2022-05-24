@@ -22,7 +22,7 @@ public class Inventory {
 		return null; //TODO
 	}
 
-	public Book getBookByAuthor(String author) {
+	public Book[] getBooksByAuthor(String author) {
 		return null; //TODO
 	}
 }
