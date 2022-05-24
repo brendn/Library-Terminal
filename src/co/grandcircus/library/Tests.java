@@ -2,6 +2,8 @@ package co.grandcircus.library;
 
 import static org.junit.Assert.assertEquals;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -82,10 +84,22 @@ public class Tests {
 		Book book = new Book("Hitchiker's Guide To The Galaxy", "Douglas Adams", Status.ON_SHELF, 1);
 		book.checkOut();
 		Calendar calendar = Calendar.getInstance();
-		Date expected = book.getDueDate();
+		calendar.add(Calendar.DATE, 14);
+		DateFormat fmt = new SimpleDateFormat("MM/dd/YYYY");
+		String expected = fmt.format(calendar.getTime());
+		String actual = fmt.format(book.getDueDate());
+		assertEquals(expected, actual);
+	}
+	
+	@Test
+	void dueDateIsNullWhenCheckedInTest() {
+		Book book = new Book("Hitchiker's Guide To The Galaxy", "Douglas Adams", Status.ON_SHELF, 1);
+		Date expected = null;
 		Date actual = book.getDueDate();
 		assertEquals(expected, actual);
 	}
+	
+	
 	
 	
 	
