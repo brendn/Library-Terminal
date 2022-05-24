@@ -32,7 +32,7 @@ public class Library {
         String s = scanner.nextLine();
 
         if (s.equalsIgnoreCase("list")) {
-            //TODO inventory.printBooks();
+            inventory.printBooks();
             System.out.println("To check out a book, enter the index of the book you would like.");
             boolean moreCheckouts = true;
             while (moreCheckouts) {
@@ -52,7 +52,7 @@ public class Library {
                 }
             }
         } else if (s.equalsIgnoreCase("return")) {
-            //TODO inventory.printBooks();
+            inventory.printBooks();
             boolean moreReturns = true;
             System.out.println("To return a book, enter the index of the book you are returning.");
             while (moreReturns) {
