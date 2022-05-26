@@ -5,23 +5,26 @@ import co.grandcircus.library.*;
 public class CommandReturn extends Command {
 
     public CommandReturn() {
-        super("return", "Returns the specified book.  Usage: return <index>");
+        super("return", "Returns the specified item.  Usage: return <index>");
     }
 
     @Override
     public void execute(String input) {
         int index = parse(input);
         try {
-            LibraryItem book = Library.INVENTORY.getItems().get(index);
-            if (book != null) {
-                if (book.getStatus() != Status.ON_SHELF) {
-                    book.checkIn();
+            // Try to find the library item at the specified index
+            LibraryItem item = Library.INVENTORY.getItems().get(index);
+            if (item != null) {
+                // Check if it's not already on the shelf
+                if (item.getStatus() != Status.ON_SHELF) {
+                    item.checkIn();
+                    System.out.printf("Thanks for returning %s!", item.getTitle());
                 } else {
-                    System.out.println("Sorry, this book is already checked in.");
+                    System.out.println("Sorry, this item is already checked in.");
                 }
             }
         } catch (Exception e) {
-            System.out.println("Error returning book, please try again.");
+            System.out.println("Error returning item, please try again.");
         }
     }
 }
