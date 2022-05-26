@@ -55,7 +55,7 @@ public class Inventory {
 	public LibraryItem[] getBooksByAuthor(String author) {
 		LibraryItem[] booksSearchedByAuthor = new LibraryItem[100];
 		int index=0;
-		for(int i = 0; i< items.size(); i++){
+		for (int i = 0; i< items.size(); i++){
 			if(items.get(i).getAuthor().get(0).equals(author)){
 				booksSearchedByAuthor[index]= items.get(i);
 				index++;
