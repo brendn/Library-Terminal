@@ -6,7 +6,7 @@ import co.grandcircus.library.Library;
 public class CommandHelp extends Command {
 
     public CommandHelp() {
-        super("help");
+        super("help", "Lists all available commands.");
     }
 
     @Override
@@ -15,9 +15,9 @@ public class CommandHelp extends Command {
         System.out.printf("We currently have %d books. To see what we have, type 'list'!%n", Library.INVENTORY.getMainBookList().size());
         System.out.println("To search for a book, type 'search <author>' or 'search <title>>'..");
         StringBuilder out = new StringBuilder();
-        Library.COMMANDS.stream().forEach(command -> {
-            out.append(String.format("%s%t%s%n", getName(), getHelp()));
-        });
+        for (Command command : Library.COMMANDS) {
+        	out.append(command.getName() + " - " + command.getHelp() + "\n");
+        }
         System.out.println(out);
     }
 }
