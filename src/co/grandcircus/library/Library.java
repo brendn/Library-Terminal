@@ -42,6 +42,7 @@ public class Library {
             s = scanner.nextLine();
             if (!runCommand(s)) {
                 System.out.println("ERROR: Command not found!");
+                System.out.println("To view a list of available commands, type 'help'!");
             }
         }
         

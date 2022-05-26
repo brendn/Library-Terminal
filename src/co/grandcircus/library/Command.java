@@ -7,9 +7,9 @@ public abstract class Command {
     private String name;
     private String help;
 
-    public Command(String name, String usage) {
+    public Command(String name, String help) {
         this.name = name;
-        this.help = usage;
+        this.help = help;
     }
 
     public Command(String name) {
