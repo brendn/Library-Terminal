@@ -1,4 +1,7 @@
-package co.grandcircus.library;
+package co.grandcircus.library.items;
+
+import co.grandcircus.library.LibraryItem;
+import co.grandcircus.library.Status;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -7,7 +10,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
-public class Book {
+public class Book implements LibraryItem {
 
 	private final String title;
 	private final ArrayList<String> author;
@@ -25,15 +28,13 @@ public class Book {
 	public Book(String title, String author, Status status) {
 		this(title, new ArrayList<>(List.of(author)), status, 10);
 	}
+
 	public Book(String title, String author, Status status, int condition) {
 		this(title, new ArrayList<>(List.of(author)), status, condition);
 	}
+
 	public Book(String title, ArrayList<String> author, Status status) {
 		this(title, author, status, 10);
-	}
-
-	public enum Status {
-		ON_SHELF, CHECKED_OUT;
 	}
 
 	public void checkIn() {

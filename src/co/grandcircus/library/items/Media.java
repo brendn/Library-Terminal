@@ -1,8 +1,11 @@
-package co.grandcircus.library;
+package co.grandcircus.library.items;
+
+import co.grandcircus.library.LibraryItem;
+import co.grandcircus.library.Status;
 
 import java.util.ArrayList;
 
-public abstract class Media {
+public abstract class Media implements LibraryItem {
 	
 	private String title;
 	private Status status;
@@ -30,10 +33,6 @@ public abstract class Media {
 		this.setPreview(preview);
 	}
 
-	public enum Status {
-		ON_SHELF, CHECKED_OUT;
-	}
-
 	public String getTitle() {
 		return title;
 	}
@@ -53,8 +52,13 @@ public abstract class Media {
 	public void setPreview(ArrayList<String> preview) {
 		this.preview = preview;
 	}
-	
-	public abstract void preview(); 
+
+	@Override
+	public ArrayList<String> getAuthor() {
+		return null;
+	}
+
+	public abstract void preview();
 	//so a user is able to 'skim' the material before checking out
 	//similar to how someone might do this at a real library
 	

@@ -1,9 +1,13 @@
-package co.grandcircus.library;
+package co.grandcircus.library.items;
+
+import co.grandcircus.library.Status;
+import co.grandcircus.library.items.Media;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
-public class DVD extends Media{
+public class DVD extends Media {
 	
 	private int runTime;
 	private String director;
@@ -30,8 +34,19 @@ public class DVD extends Media{
 		return runTime;
 	}
 
-	public String getDirector() {
-		return director;
+	@Override
+	public ArrayList<String> getAuthor() {
+		return new ArrayList<>(List.of(director));
+	}
+
+	@Override
+	public void checkIn() {
+
+	}
+
+	@Override
+	public void checkOut() {
+
 	}
 
 	@Override
@@ -63,14 +78,14 @@ public class DVD extends Media{
 	//mediaList.add(all of the books as well)...
 	
 	//CREATE THE PREVIEW ARRAYLISTS FOR EACH DVD
-	//ArrayList<String> gooniesPreview = new ArrayList<>();
-	//gooniesPreview.add("Front Cover: A bunch of scared-looking kids crowded around a Pirate skull and gold coins!");
-	//gooniesPreview.add("Inside Cover: 'Don't say that, ever say that. Goonies never say die.'");
-	//gooniesPreview.add("Back Cover: A deliciously dizzy adventure with crowd-pleasing fun!");
-	//ArrayList<String> lostBoysPreview = new ArrayList<>();
-	//lostBoysPreview.add("Front Cover: A group of tough-looking young-adults staring you menacingly in the eyes.");
-	//lostBoysPreview.add("Inside Cover: 'You'll never grow old Michael, and you'll never die. But you must feed!'");
-	//lostBoysPreview.add("Back Cover: A hip, comic twist on classic vampire stories");
+//	ArrayList<String> gooniesPreview = new ArrayList<>();
+//	gooniesPreview.add("Front Cover: A bunch of scared-looking kids crowded around a Pirate skull and gold coins!");
+//	gooniesPreview.add("Inside Cover: 'Don't say that, ever say that. Goonies never say die.'");
+//	gooniesPreview.add("Back Cover: A deliciously dizzy adventure with crowd-pleasing fun!");
+//	ArrayList<String> lostBoysPreview = new ArrayList<>();
+//	lostBoysPreview.add("Front Cover: A group of tough-looking young-adults staring you menacingly in the eyes.");
+//	lostBoysPreview.add("Inside Cover: 'You'll never grow old Michael, and you'll never die. But you must feed!'");
+//	lostBoysPreview.add("Back Cover: A hip, comic twist on classic vampire stories");
 	//ArrayList<String> standByMePreview = new ArrayList<>();
 	//standByMePreview.add("Front Cover: Four young boys painted above a backdrop of open wilderness");
 	//standByMePreview.add("Inside Cover: 'I never had any friends later on like the ones I had when I was twelve...'");
@@ -81,8 +96,8 @@ public class DVD extends Media{
 	//attackOnTitanPreview.add("Back Cover: Lies uphold these walls.");
 	
 	//CREATE THE DVD OBJECTS
-	//DVD goonies = new DVD("The Goonies", ON_SHELF, gooniesPreview, "Richard Donner");
-	//DVD lostBoys = new DVD("The Lost Boys", ON_SHELF, lostBoysPreview, "Joel Schumacher" );
+//	DVD goonies = new DVD("The Goonies", ON_SHELF, gooniesPreview, "Richard Donner");
+//	DVD lostBoys = new DVD("The Lost Boys", ON_SHELF, lostBoysPreview, "Joel Schumacher" );
 	//DVD standByMe = new DVD("Stand By Me", ON_SHELF, standByMePreview, "Rob Reiner");
 	//DVD attackOnTitan = new DVD("Attack On Titan: Season 3", ON_SHELF, attackOnTitanPreview, "Masashi Koizuka");
 

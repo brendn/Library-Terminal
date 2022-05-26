@@ -1,35 +1,50 @@
 package co.grandcircus.library;
 
+import co.grandcircus.library.items.Book;
+import co.grandcircus.library.items.DVD;
+import co.grandcircus.library.items.Media;
+
 import java.util.ArrayList;
 import java.util.Formatter;
 
 public class Inventory {
 
-	private ArrayList<Book> mainBookList = new ArrayList<>();
+	private ArrayList<LibraryItem> items = new ArrayList<>();
 
-	public ArrayList<Book> getMainBookList() {
-		return mainBookList;
+	public ArrayList<LibraryItem> getItems() {
+		return items;
 	}
 	
-	public void addBook(Book book) {
-		this.mainBookList.add(book);
+	public void addItem(LibraryItem item) {
+		this.items.add(item);
 	}
 
-	public void printBooks() {
+	public void printItems() {
 		Formatter fmt = new Formatter();
-		fmt.format("%40s %40s %40s\n", "BOOK NAME", "AUTHOR NAME", "STATUS");
+		fmt.format("%10s %40s %40s %40s %40s\n", "ID", "NAME", "AUTHOR/DIRECTOR", "STATUS", "TYPE");
 		fmt.format("%40s %40s %40s\n",""," "," ");
-		for(int i=0;i< mainBookList.size();i++){
-			fmt.format("%40s %40s %40s\n", mainBookList.get(i).getTitle(),mainBookList.get(i).getAuthor().get(0),mainBookList
-					.get(i).getStatus());
+		for (int i = 0; i< items.size(); i++){
+			LibraryItem item = items.get(i);
+			String type = item instanceof Book ? "Book" : item instanceof DVD ? "DVD" : item instanceof Media ? "Media" : "";
+			fmt.format("%10d %40s %40s %40s %40s\n", Library.INVENTORY.getItems().indexOf(item), item.getTitle(), item.getAuthor(), item.getStatus(), type);
 
 		}
 		System.out.println(fmt);
 	}
 
+	public static LibraryItem findItem(String input) {
+		LibraryItem book = null;
+		for (LibraryItem b : Library.INVENTORY.getItems()) {
+			if (b.getTitle().equalsIgnoreCase(input)) {
+				return b;
+			}
+		}
+		return book;
+	}
+
 	public boolean getBookByTitle(String title) {
-		for(int i=0;i< mainBookList.size();i++){
-			if(mainBookList.get(i).getTitle().equals(title))
+		for(int i = 0; i< items.size(); i++){
+			if(items.get(i).getTitle().equals(title))
 			{
 				return true;
 			}
@@ -37,12 +52,12 @@ public class Inventory {
 		return false;
 	}
 
-	public Book[] getBooksByAuthor(String author) {
-		Book[] booksSearchedByAuthor = new Book[100];
+	public LibraryItem[] getBooksByAuthor(String author) {
+		LibraryItem[] booksSearchedByAuthor = new LibraryItem[100];
 		int index=0;
-		for(int i=0;i< mainBookList.size();i++){
-			if(mainBookList.get(i).getAuthor().get(0).equals(author)){
-				booksSearchedByAuthor[index]=mainBookList.get(i);
+		for(int i = 0; i< items.size(); i++){
+			if(items.get(i).getAuthor().get(0).equals(author)){
+				booksSearchedByAuthor[index]= items.get(i);
 				index++;
 			}
 		}
