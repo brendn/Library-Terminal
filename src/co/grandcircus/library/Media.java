@@ -7,10 +7,10 @@ public abstract class Media {
 	private String title;
 	private Status status;
 	private ArrayList<String> preview = new ArrayList<>();
-	//Thinking about sticking to 3 items in each ArrayList:
-	//0. Front cover
-	//1. Random middle section
-	//2. Back cover
+	//Stick to 3 items in each ArrayList:
+	//0. Actual front cover image description
+	//1. Quote from the book/DVD/etc
+	//2. Quote from the actual back cover
 	
 	
 	public Media() {
