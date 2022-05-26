@@ -20,7 +20,7 @@ public class Inventory {
 		fmt.format("%40s %40s %40s\n", "BOOK NAME", "AUTHOR NAME", "STATUS");
 		fmt.format("%40s %40s %40s\n",""," "," ");
 		for(int i=0;i< mainBookList.size();i++){
-			fmt.format("%40s %40s %40s\n", mainBookList.get(i).getTitle(),mainBookList.get(i).getAuthor(),mainBookList
+			fmt.format("%40s %40s %40s\n", mainBookList.get(i).getTitle(),mainBookList.get(i).getAuthor().get(0),mainBookList
 					.get(i).getStatus());
 
 		}
@@ -41,7 +41,7 @@ public class Inventory {
 		Book[] booksSearchedByAuthor = new Book[100];
 		int index=0;
 		for(int i=0;i< mainBookList.size();i++){
-			if(mainBookList.get(i).getAuthor().equals(author)){
+			if(mainBookList.get(i).getAuthor().get(0).equals(author)){
 				booksSearchedByAuthor[index]=mainBookList.get(i);
 				index++;
 			}

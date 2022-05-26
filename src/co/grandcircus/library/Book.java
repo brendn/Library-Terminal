@@ -2,18 +2,20 @@ package co.grandcircus.library;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 public class Book {
 
 	private final String title;
-	private final String author;
+	private final ArrayList<String> author;
 	private Status status;
 	private int condition;
 	private Date dueDate = null;
 
-	public Book(String title, String author, Status status, int condition) {
+	public Book(String title, ArrayList<String> author, Status status, int condition) {
 		this.title = title;
 		this.author = author;
 		this.status = status;
@@ -21,6 +23,12 @@ public class Book {
 	}
 
 	public Book(String title, String author, Status status) {
+		this(title, new ArrayList<>(List.of(author)), status, 10);
+	}
+	public Book(String title, String author, Status status, int condition) {
+		this(title, new ArrayList<>(List.of(author)), status, condition);
+	}
+	public Book(String title, ArrayList<String> author, Status status) {
 		this(title, author, status, 10);
 	}
 
@@ -51,7 +59,7 @@ public class Book {
 		return title;
 	}
 
-	public String getAuthor() {
+	public ArrayList<String> getAuthor() {
 		return author;
 	}
 
