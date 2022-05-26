@@ -2,6 +2,7 @@ package co.grandcircus.library.commands;
 
 import co.grandcircus.library.Command;
 import co.grandcircus.library.Library;
+import co.grandcircus.library.LibraryItem;
 
 public class CommandList extends Command {
 
@@ -11,8 +12,8 @@ public class CommandList extends Command {
 
     @Override
     public void execute(String input) {
-        Library.INVENTORY.printItems();
-        System.out.println("To check out a book, enter 'checkout <index>'");
-        System.out.println("To return a book, enter 'return <index>'");
+        LibraryItem[] items = new LibraryItem[Library.INVENTORY.getItems().size()];
+        printTable(true, Library.INVENTORY.getItems().toArray(items));
+        printGeneralHelp();
     }
 }

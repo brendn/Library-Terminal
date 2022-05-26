@@ -47,8 +47,8 @@ public class Library {
         INVENTORY.addItem(new Book("Coraline", "Neil Gaiman", Status.ON_SHELF, 10));
 
         System.out.println("Welcome to the Grand Circus Library!");
-        System.out.printf("We currently have %d books. To see what we have, type 'list'!%n", INVENTORY.getItems().size());
-        System.out.println("To search for a book, type 'search <author>' or 'search <title>'..");
+        System.out.printf("We currently have %d items. To see what we have, type 'list'!%n", INVENTORY.getItems().size());
+        System.out.println("To search for an item, type 'search <author/director>' or 'search <title>'..");
 
         String s;
         while (scanner.hasNext()) {

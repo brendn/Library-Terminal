@@ -1,5 +1,11 @@
 package co.grandcircus.library;
 
+import co.grandcircus.library.items.Book;
+import co.grandcircus.library.items.DVD;
+import co.grandcircus.library.items.Media;
+
+import java.util.Formatter;
+
 public abstract class Command {
 
     private String name;
@@ -53,5 +59,23 @@ public abstract class Command {
         }
     }
 
+    protected void printTable(boolean titleRow, LibraryItem... items) {
+        Formatter fmt = new Formatter();
+        fmt.format("%-5s %-40s %-30s %-15s %-15s\n", "ID", "NAME", "AUTHOR/DIRECTOR", "STATUS", "TYPE");
+
+        for (LibraryItem item : items) {
+            if (item != null) {
+                String type = item instanceof Book ? "Book" : item instanceof DVD ? "DVD" : item instanceof Media ? "Media" : "";
+                fmt.format("%-5d %-40s %-30s %-15s %-15s\n", Library.INVENTORY.getItems().indexOf(item), item.getTitle(), item.getAuthor(), item.getStatus(), type);
+            }
+        }
+
+        System.out.println(fmt);
+    }
+
+    protected void printGeneralHelp() {
+        System.out.printf("We currently have %d items. To see what we have, type 'list'!%n", Library.INVENTORY.getItems().size());
+        System.out.println("To search for an item, type 'search <author/director>' or 'search <title>'..");
+    }
 }
 
