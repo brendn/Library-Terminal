@@ -1,15 +1,14 @@
 package co.grandcircus.library;
 
-import static org.junit.Assert.assertEquals;
-
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+import co.grandcircus.library.items.Book;
 import org.junit.jupiter.api.Test;
 
-import co.grandcircus.library.Book.Status;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class Tests {
 

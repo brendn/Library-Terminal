@@ -11,7 +11,7 @@ public class CommandList extends Command {
 
     @Override
     public void execute(String input) {
-        Library.INVENTORY.printBooks();
+        Library.INVENTORY.printItems();
         System.out.println("To check out a book, enter 'checkout <index>'");
         System.out.println("To return a book, enter 'return <index>'");
     }
