@@ -17,7 +17,16 @@ public class Book implements LibraryItem {
 	private Status status;
 	private int condition;
 	private Date dueDate = null;
+	private ArrayList<String> preview;
 
+	public Book(String title, ArrayList<String> author, Status status, int condition, ArrayList<String> preview) {
+		this.title = title;
+		this.author = author;
+		this.status = status;
+		this.condition = condition;
+		this.preview = preview;
+	}
+	
 	public Book(String title, ArrayList<String> author, Status status, int condition) {
 		this.title = title;
 		this.author = author;
@@ -82,6 +91,10 @@ public class Book implements LibraryItem {
 
 	public void setDueDate(Date dueDate) {
 		this.dueDate = dueDate;
+	}
+
+	public ArrayList<String> getPreview() {
+		return preview;
 	}
 
 }
