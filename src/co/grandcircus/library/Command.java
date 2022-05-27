@@ -76,6 +76,7 @@ public abstract class Command {
     protected void printGeneralHelp() {
         System.out.printf("We currently have %d items. To see what we have, type 'list'!%n", Library.INVENTORY.getItems().size());
         System.out.println("To search for an item, type 'search <author/director>' or 'search <title>'..");
+        System.out.println("To preview an item, type 'preview <index>'");
     }
 }
 

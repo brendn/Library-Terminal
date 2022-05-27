@@ -18,6 +18,7 @@ public class Library {
         COMMANDS.add(new CommandReturn());
         COMMANDS.add(new CommandSearch());
         COMMANDS.add(new CommandCheckOut());
+        COMMANDS.add(new CommandPreview());
 
         //adding 'preview' details - material the user can skim before checking out
         ArrayList<String> gooniesPreview = new ArrayList<>();

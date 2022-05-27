@@ -22,6 +22,11 @@ public interface LibraryItem {
      * the director(s).
      */
     ArrayList<String> getAuthor();
+    
+    /**
+     * Lists the preview elements
+     */
+    ArrayList<String> getPreview();
 
     /**
      * Executed every time the item is checked into the library.
