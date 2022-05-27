@@ -7,7 +7,7 @@ import co.grandcircus.library.LibraryItem;
 public class CommandList extends Command {
 
     public CommandList() {
-        super("list", "Lists all books.");
+        super("list", "Lists all books and DVDs.");
     }
 
     @Override

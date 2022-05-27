@@ -117,6 +117,7 @@ public class Library {
         System.out.println("Welcome to the Grand Circus Library!");
         System.out.printf("We currently have %d items. To see what we have, type 'list'!%n", INVENTORY.getItems().size());
         System.out.println("To search for an item, type 'search <author/director>' or 'search <title>'..");
+        System.out.println("To see a full list of available commands, type 'help'.");
 
         String s;
         while (scanner.hasNext()) {

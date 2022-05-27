@@ -11,7 +11,7 @@ import co.grandcircus.library.items.Media;
 public class CommandPreview extends Command {
 
 	public CommandPreview() {
-		super("preview", "Skim the material to see if it looks interesting before checking it out.");
+		super("preview", "Preview an item before checking it out. Usage: preview <index>");
 	}
 
 	@Override
