@@ -17,9 +17,9 @@ public class LibraryIO {
     private static ArrayList<Book> bookList = new ArrayList<>();
     private static ArrayList<DVD> dvdList = new ArrayList<>();
 
-    public static void main(String[] args) {
+    public static void load() {
         try {
-            File in = new File("Items.txt");
+            File in = new File("Items.xml");
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             DocumentBuilder builder = factory.newDocumentBuilder();
             Document doc = builder.parse(in);
@@ -32,6 +32,43 @@ public class LibraryIO {
             loadDVDs(dvds);
         } catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+
+    private static void saveMeTimePlease() {
+        for (LibraryItem item : Library.INVENTORY.getItems()) {
+            if (item instanceof Book) {
+                Book book = (Book) item;
+                String title = "<book name=\"" + book.getTitle() +"\">";
+                String author = "<author>" + book.getAuthor().get(0) + "</author>";
+                String status = "<status>" + book.getStatus() + "</status>";
+                String condition = "<condition>" + book.getCondition() + "</condition>";
+                System.out.println(title);
+                System.out.println(author);
+                System.out.println(status);
+                System.out.println(condition);
+                if (book.getPreview() != null) {
+                    for (String s : book.getPreview()) {
+                        System.out.println("<preview>" + s + "</preview>");
+                    }
+                }
+                System.out.println("</book>");
+            }
+            if (item instanceof DVD) {
+                DVD dvd = (DVD) item;
+                String title = "<dvd name=\"" + dvd.getTitle() +"\">";
+                String author = "<author>" + dvd.getAuthor().get(0) + "</author>";
+                String status = "<status>" + dvd.getStatus() + "</status>";
+                String runtime = "<runtime>" + dvd.getRunTime() + "</runtime>";
+                System.out.println(title);
+                System.out.println(author);
+                System.out.println(status);
+                System.out.println(runtime);
+                for (String s : dvd.getPreview()) {
+                    System.out.println("<preview>" + s + "</preview>");
+                }
+                System.out.println("</dvd>");
+            }
         }
     }
 
@@ -53,6 +90,13 @@ public class LibraryIO {
                     authors.add(tagText);
                 }
 
+                ArrayList<String> preview = new ArrayList<>();
+                for (int p = 0; p < element.getElementsByTagName("preview").getLength(); p++) {
+                    Node previewTag = element.getElementsByTagName("preview").item(p);
+                    String tagText = previewTag.getTextContent();
+                    preview.add(tagText);
+                }
+
                 // Get the status of the book
                 String statusTag = getTextValue(element, "status");
                 Status status = Status.valueOf(statusTag);
@@ -60,7 +104,7 @@ public class LibraryIO {
                 // Get the condition of the book
                 int condition = Integer.parseInt(getTextValue(element, "condition"));
 
-                bookList.add(new Book(name, authors, status, condition));
+                Library.INVENTORY.addItem(new Book(name, authors, status, condition));
             }
         }
     }
@@ -97,7 +141,7 @@ public class LibraryIO {
                 // Get the condition of the book
                 int runtime = Integer.parseInt(getTextValue(element, "runtime"));
 
-                dvdList.add(new DVD(name, status, preview, runtime, directors.get(0)));
+                Library.INVENTORY.addItem(new DVD(name, status, preview, runtime, directors.get(0)));
             }
         }
     }

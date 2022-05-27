@@ -1,0 +1,147 @@
+<class>
+    <dvd name="The Goonies">
+        <author>Richard Donner</author>
+        <status>ON_SHELF</status>
+        <runtime>114</runtime>
+        <preview>Front Cover: A bunch of scared-looking kids crowded around a Pirate skull and gold coins!</preview>
+        <preview>Inside Cover: 'Don't say that, ever say that. Goonies never say die.'</preview>
+        <preview>Back Cover: A deliciously dizzy adventure with crowd-pleasing fun!</preview>
+    </dvd>
+    <dvd name="The Lost Boys">
+        <author>Joel Schumacher</author>
+        <status>CHECKED_OUT</status>
+        <runtime>97</runtime>
+        <preview>Front Cover: A group of tough-looking young-adults staring you menacingly in the eyes.</preview>
+        <preview>Inside Cover: 'You'll never grow old Michael, and you'll never die. But you must feed!'</preview>
+        <preview>Back Cover: A hip, comic twist on classic vampire stories</preview>
+    </dvd>
+    <dvd name="Stand By Me">
+        <author>Rob Reiner</author>
+        <status>ON_SHELF</status>
+        <runtime>89</runtime>
+        <preview>Front Cover: Four young boys painted above a backdrop of open wilderness</preview>
+        <preview>Inside Cover: 'I never had any friends later on like the ones I had when I was twelve...'</preview>
+        <preview>Back Cover: Absolutely wonderful...a film I may never forget!</preview>
+    </dvd>
+    <dvd name="Attack On Titan: Season 3">
+        <author>Masashi Koizuka</author>
+        <status>ON_SHELF</status>
+        <runtime>506</runtime>
+        <preview>Front Cover: Two people stand at the foot of a massive crystal-laden cavern; a third person is chained to the walls above them.
+        </preview>
+        <preview>Inside Cover: 'This world is merciless, and it's also very beautiful.'</preview>
+        <preview>Back Cover: Lies uphold these walls.</preview>
+    </dvd>
+    <book name="Hitchiker's Guide To The Galaxy">
+        <author>Douglas Adams</author>
+        <status>CHECKED_OUT</status>
+        <condition>10</condition>
+        <preview>Front Cover: A large hand with thumb pointed out in outer space. A comical green entity smiles in the background.</preview>
+        <preview>Inside Cover: 'Forty-two, said Deep Thought, with infinite majesty and calm.'</preview>
+        <preview>Back Cover: Extremely funny...inspired lunacy..[and] over much too soon.</preview>
+    </book>
+    <book name="The Shining">
+        <author>Stephen King</author>
+        <status>ON_SHELF</status>
+        <condition>10</condition>
+        <preview>Front Cover: A crazed looking man is scowling through the hole in a partially destroyed door.</preview>
+        <preview>Inside Cover: 'All work and no play makes Jack a dull boy'.</preview>
+        <preview>Back Cover: Scary!...Serves up horrors at a brist, unflagging pace.</preview>
+    </book>
+    <book name="Harry Potter and the Sorcerer's Stone">
+        <author>Daniel Radcliffe</author>
+        <status>ON_SHELF</status>
+        <condition>5</condition>
+        <preview>Front Cover: A young boy on a broomstick flies through stone pillars near a forest at nightfall.</preview>
+        <preview>Inside Cover: 'The truth.' Dumbledore sighed. 'It is a beautiful and terrible thing, and should therefore be treated with great caution.' </preview>
+        <preview>Back Cover: Harry Potter could assume the same near-legendary status as\n Roald Dahl's Charlie, of chocolate factory fame.</preview>
+    </book>
+    <book name="Dilla Time">
+        <author>Dan Charnas</author>
+        <status>ON_SHELF</status>
+        <condition>10</condition>
+        <preview>Front Cover: A pixelated portrait of a young man in a ball cap, set in front of a blue and black grid of squares. </preview>
+        <preview>Inside Cover: 'I look at J Dilla as a man who redefined the word innovative. - DJ PREMIER'</preview>
+        <preview>Back Cover: This book is a must for everyone interested in illuinating the idea of unexplainable genius.</preview>
+    </book>
+    <book name="To Kill a Mockingbird">
+        <author>Harper Lee</author>
+        <status>CHECKED_OUT</status>
+        <condition>4</condition>
+        <preview>Front Cover: A black and green silouette of a large tree, set on a blood-red backdrop.</preview>
+        <preview>Inside Cover: 'The one thing that doesn't abide by majority rule is a person's conscience'.</preview>
+        <preview>Back Cover: That rare literary phenomenon, a Southern novel with no mildew on its magnolia leaves.</preview>
+    </book>
+    <book name="The Great Gatsby">
+        <author>F. Scott Fitzgerald</author>
+        <status>ON_SHELF</status>
+        <condition>4</condition>
+        <preview>Front Cover: A woman's face sheds a tear, and blends in to the night sky. A bright city scene illuminates itself below. </preview>
+        <preview>Inside Cover: 'I love her and that's the beginning and end of everything.'</preview>
+        <preview>Back Cover: It is a magical, living book, blended of irony, romance, and mysticism.</preview>
+    </book>
+    <book name="Frankenstein">
+        <author>Mary Shelley</author>
+        <status>ON_SHELF</status>
+        <condition>4</condition>
+        <preview>Front Cover: An isolated castle sits below a pitch black sky filled with lightning.</preview>
+        <preview>Inside Cover: 'Beware, for I am fearless, and therefore powerful.' </preview>
+        <preview>Back Cover: You are my creator, but I am your master - obey!</preview>
+    </book>
+    <book name="Flowers for Algernon">
+        <author>Daniel Keyes</author>
+        <status>ON_SHELF</status>
+        <condition>10</condition>
+        <preview>Front Cover: A black inkblot, dotted with blue and yellow flowers, sits in the middle of a white background.</preview>
+        <preview>Inside Cover: 'There are so many doors to open. I am impatient to begin.' </preview>
+        <preview>Back Cover: An insightful first-person account of the difficulties and joys of the writing life and...\none of the most useful writers' manuals to be published in a long time.</preview>
+    </book>
+    <book name="Twilight">
+        <author>Stephenie Meyer</author>
+        <status>ON_SHELF</status>
+        <condition>10</condition>
+        <preview>Front Cover: A lightly colored, pair of delicate looking hands hold a bright red apple on top of a deep black backdrop.</preview>
+        <preview>Inside Cover: 'What if I'm not the hero? What if I'm the bad guy?' </preview>
+        <preview>Back Cover: An Amazon 'Best Book of the Decade...So Far'.</preview>
+    </book>
+    <book name="The Hunger Games">
+        <author>Suzanne Collins</author>
+        <status>CHECKED_OUT</status>
+        <condition>10</condition>
+        <preview>Front Cover: A golden emblem of a bird holding an arrow is centered among a maze of concentrenic circles.</preview>
+        <preview>Inside Cover: 'Hope is the only thing stronger than fear.' </preview>
+        <preview>Back Cover: A violent, jarring, speed-rap of a novel that generates nearly constant suspense.</preview>
+    </book>
+    <book name="James and the Giant Peach">
+        <author>Roald Dahl</author>
+        <status>ON_SHELF</status>
+        <condition>10</condition>
+        <preview>Front Cover: A silouette of a young boy standing with giant insects appear to be dancing.</preview>
+        <preview>Inside Cover: 'There are a whole lot of things in this world of ours you haven't started wondering about yet.'</preview>
+        <preview>Back Cover: Poor James is miserable until something peculiar happens and James finds himself on the most wonderful and extraordinary \n journey he could ever imagine.</preview>
+    </book>
+    <book name="Charlie and the Chocolate Factory">
+        <author>Roald Dahl</author>
+        <status>ON_SHELF</status>
+        <condition>10</condition>
+        <preview>Front Cover: A small boy is smiling wildy, holding a golden ticket. He is standing next to an eccentric looking man wearing a top hat.</preview>
+        <preview>Inside Cover: 'The greatest secrets are always hidden in the most unlikely places.'</preview>
+        <preview>Back Cover: Charlie Bucket, Our Hero, a boy who is honest and kind, brave, and true, and good and ready for the wildes time of his life!</preview>
+    </book>
+    <book name="The Graveyard Book">
+        <author>Neil Gaiman</author>
+        <status>ON_SHELF</status>
+        <condition>10</condition>
+        <preview>Front Cover: A rumpled metal silouette is kneeling and facing off into the darkness.</preview>
+        <preview>Inside Cover: 'If you dare nothing, then when the day is over, nothing is all you will have gained.' </preview>
+        <preview>Back Cover: Like a bite of dark Halloween chocolate, this novel proves rich, bittersweet, and very satisfying.</preview>
+    </book>
+    <book name="Coraline">
+        <author>Neil Gaiman</author>
+        <status>ON_SHELF</status>
+        <condition>10</condition>
+        <preview>Front Cover: A young girl with distorted eyes stares past the viewer. She is holding a golden candle, and set on a blotchy black background.</preview>
+        <preview>Inside Cover: 'She's got this whole world where everything's better. The food, the garden, the neighbors. But it's all a trap. </preview>
+        <preview>Back Cover: Coraline will have to fight with all her wits and courage if she is to save herself and return to her ordinary life.</preview>
+    </book>
+</class>
