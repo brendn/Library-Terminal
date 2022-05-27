@@ -98,7 +98,7 @@ public class Library {
         INVENTORY.addItem(new DVD("Stand By Me", Status.ON_SHELF, standByMePreview, 89, "Rob Reiner"));
     	INVENTORY.addItem(new DVD("Attack On Titan: Season 3", Status.ON_SHELF, attackOnTitanPreview, 506, "Masashi Koizuka"));
 
-        INVENTORY.addItem(new Book("Hitchiker's Guide To The Galaxy", "Douglas Adams", Status.CHECKED_OUT));
+        INVENTORY.addItem(new Book("Hitchiker's Guide To The Galaxy", "Douglas Adams", Status.CHECKED_OUT, 10, hitchHikerPreview));
         INVENTORY.addItem(new Book("The Shining", "Stephen King", Status.ON_SHELF));
         INVENTORY.addItem(new Book("Harry Potter and the Sorcerer's Stone", "Daniel Radcliffe", Status.ON_SHELF, 5));
         INVENTORY.addItem(new Book("Dilla Time", "Dan Charnas", Status.ON_SHELF, 10));

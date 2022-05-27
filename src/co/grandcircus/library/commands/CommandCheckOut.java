@@ -16,6 +16,7 @@ public class CommandCheckOut extends Command {
 
         // Find the book at the specified index
         LibraryItem book = Library.INVENTORY.getItems().get(index);
+
         if (book != null) {
             // Check if the book is on shelf.
             if (book.getStatus() == Status.ON_SHELF) {

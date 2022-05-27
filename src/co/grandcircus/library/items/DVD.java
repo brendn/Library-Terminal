@@ -3,7 +3,11 @@ package co.grandcircus.library.items;
 import co.grandcircus.library.Status;
 import co.grandcircus.library.items.Media;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
@@ -11,6 +15,7 @@ public class DVD extends Media {
 	
 	private int runTime;
 	private String director;
+	private Date dueDate = null;
 
 	public DVD() {
 		super();
@@ -41,12 +46,17 @@ public class DVD extends Media {
 
 	@Override
 	public void checkIn() {
-
+		this.setStatus(Status.ON_SHELF);
 	}
 
 	@Override
 	public void checkOut() {
-
+		this.setStatus(Status.CHECKED_OUT); 
+		Calendar calendar = Calendar.getInstance();
+		calendar.add(Calendar.DATE, 14);
+		setDueDate(calendar.getTime());
+		DateFormat df = new SimpleDateFormat("MM/dd/yyyy");
+		System.out.println(this.getTitle() + " is due on: " + df.format(getDueDate()));
 	}
 
 	@Override
@@ -66,5 +76,13 @@ public class DVD extends Media {
 		} catch (Exception e) {
 			System.out.println("Error at DVD class/preview() method. Please try again or call Customer Support if error persists.");
 		}
+	}
+
+	public Date getDueDate() {
+		return dueDate;
+	}
+
+	public void setDueDate(Date dueDate) {
+		this.dueDate = dueDate;
 	}
 }

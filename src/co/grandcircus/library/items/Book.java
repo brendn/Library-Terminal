@@ -19,9 +19,9 @@ public class Book implements LibraryItem {
 	private Date dueDate = null;
 	private ArrayList<String> preview;
 
-	public Book(String title, ArrayList<String> author, Status status, int condition, ArrayList<String> preview) {
+	public Book(String title, String author, Status status, int condition, ArrayList<String> preview) {
 		this.title = title;
-		this.author = author;
+		this.author = new ArrayList<>(List.of(author));
 		this.status = status;
 		this.condition = condition;
 		this.preview = preview;
