@@ -64,20 +64,6 @@ public class DVD extends Media {
 		return "DVD Title: " + getTitle() + ", Status: " + getStatus() + ", Run Time: " + runTime + ", Director: " + director;
 	}
 
-	@Override
-	public void preview() {
-		try {
-		System.out.println("What would you like to preview?");
-		printPreview();
-		Scanner scnr = new Scanner(System.in);
-		int userChoice = scnr.nextInt();
-		System.out.println(getPreview().get(userChoice));
-		scnr.close();
-		} catch (Exception e) {
-			System.out.println("Error at DVD class/preview() method. Please try again or call Customer Support if error persists.");
-		}
-	}
-
 	public Date getDueDate() {
 		return dueDate;
 	}

@@ -46,6 +46,9 @@ public abstract class Media implements LibraryItem {
 	}
 	
 	public ArrayList<String> getPreview() {
+		for (int i = 0; i < preview.size(); i ++) {
+			System.out.println(preview.get(i));
+		}
 		return preview;
 	}
 	
@@ -57,11 +60,6 @@ public abstract class Media implements LibraryItem {
 	public ArrayList<String> getAuthor() {
 		return null;
 	}
-
-	public abstract void preview();
-	//so a user is able to 'skim' the material before checking out
-	//similar to how someone might do this at a real library
-	
 	
 	public void printPreview() {
 		for (int i = 0; i < preview.size(); i ++) {

@@ -4,6 +4,9 @@ import co.grandcircus.library.Command;
 import co.grandcircus.library.Library;
 import co.grandcircus.library.LibraryItem;
 import co.grandcircus.library.Status;
+import co.grandcircus.library.items.Book;
+import co.grandcircus.library.items.DVD;
+import co.grandcircus.library.items.Media;
 
 public class CommandPreview extends Command {
 
@@ -19,9 +22,10 @@ public class CommandPreview extends Command {
         // Find the item at the specified index
         LibraryItem book = Library.INVENTORY.getItems().get(index);
         
+        // Check to see if the item is available to be looked at
         if (book != null && book.getStatus() == Status.ON_SHELF) {
-        	System.out.println("Here's a preview of the material:");
-   
+        	System.out.println("Here's a preview of " + book.getTitle() + ":");
+        	book.getPreview();
         	
         } else {
         	System.out.println("Sorry, that item is currently checked out.");
