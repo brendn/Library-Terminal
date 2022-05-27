@@ -1,0 +1,25 @@
+<class>
+    <dvd name = "The Goonies">
+        <author>Richard Donner</author>
+        <runtime>114</runtime>
+        <status>ON_SHELF</status>
+        <preview>Front Cover: A group of tough-looking young-adults staring you menacingly in the eyes</preview>
+        <preview>Inside Cover: 'You'll never grow old Michael, and you'll never die. But you must feed!</preview>
+        <preview>Back Cover: A hip, comic twist on classic vampire stories</preview>
+    </dvd>
+    <book name = "Hitchiker's Guide To The Galaxy">
+        <author>Douglas Adams</author>
+        <status>ON_SHELF</status>
+        <condition>10</condition>
+    </book>
+    <book name = "Dilla Time">
+        <author>Dan Charnas</author>
+        <status>ON_SHELF</status>
+        <condition>10</condition>
+    </book>
+    <book name = "The Shining">
+        <author>Stephen King</author>
+        <status>ON_SHELF</status>
+        <condition>10</condition>
+    </book>
+</class>
