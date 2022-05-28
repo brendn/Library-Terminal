@@ -18,15 +18,10 @@ public interface LibraryItem {
     String getTitle();
 
     /**
-     * The authoer(s) of the item.  For {@link co.grandcircus.library.items.DVD} items this would represent
+     * The author(s) of the item.  For {@link co.grandcircus.library.items.DVD} items this would represent
      * the director(s).
      */
     ArrayList<String> getAuthor();
-    
-    /**
-     * Lists the preview elements
-     */
-    ArrayList<String> getPreview();
 
     /**
      * Executed every time the item is checked into the library.
