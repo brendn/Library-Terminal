@@ -1,6 +1,7 @@
 package co.grandcircus.library;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * Represents an item that will be in the Library's inventory, such as a book or a DVD
@@ -18,8 +19,14 @@ public interface LibraryItem {
     String getTitle();
 
     /**
-     * The authoer(s) of the item.  For {@link co.grandcircus.library.items.DVD} items this would represent
+     * The author(s) of the item.  For {@link co.grandcircus.library.items.DVD} items this would represent
      * the director(s).
+     */
+    
+    Date getDueDate();
+
+    /**
+     * Return the Due Date for a given item.
      */
     ArrayList<String> getAuthor();
     
