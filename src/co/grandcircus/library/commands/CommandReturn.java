@@ -13,6 +13,7 @@ public class CommandReturn extends Command {
     @Override
     public void execute(String input, Scanner scanner) {
         int index = parse(input);
+
         try {
             // Try to find the library item at the specified index
             LibraryItem item = Library.INVENTORY.getItems().get(index);
