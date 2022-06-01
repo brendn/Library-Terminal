@@ -60,7 +60,7 @@ public abstract class Command {
         }
     }
 
-    protected void printTable(boolean titleRow, LibraryItem... items) {
+    protected void printTable(LibraryItem... items) {
         Formatter fmt = new Formatter();
         fmt.format("%-5s %-40s %-30s %-15s %-15s\n", "ID", "NAME", "AUTHOR/DIRECTOR", "STATUS", "TYPE");
 

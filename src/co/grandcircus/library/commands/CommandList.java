@@ -15,7 +15,7 @@ public class CommandList extends Command {
     @Override
     public void execute(String input, Scanner scanner) {
         LibraryItem[] items = new LibraryItem[Library.INVENTORY.getItems().size()];
-        printTable(true, Library.INVENTORY.getItems().toArray(items));
+        printTable(Library.INVENTORY.getItems().toArray(items));
         printGeneralHelp();
     }
 }

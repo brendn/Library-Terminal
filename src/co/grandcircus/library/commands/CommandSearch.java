@@ -17,12 +17,12 @@ public class CommandSearch extends Command {
         LibraryItem[] authorResults = Library.INVENTORY.getBooksByAuthor(input);
         boolean foundAuthor = authorResults[0] != null;
         if (foundAuthor) {
-            printTable(true, authorResults);
+            printTable(authorResults);
             printGeneralHelp();
         } else {
             LibraryItem item = findItem(input);
             if (item != null) {
-                printTable(true, item);
+                printTable(item);
                 printGeneralHelp();
             } else {
                 System.out.println("Sorry, no results found. Type 'list' to see a list of our items.");
