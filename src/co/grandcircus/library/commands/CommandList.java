@@ -4,6 +4,8 @@ import co.grandcircus.library.Command;
 import co.grandcircus.library.Library;
 import co.grandcircus.library.LibraryItem;
 
+import java.util.Scanner;
+
 public class CommandList extends Command {
 
     public CommandList() {
@@ -11,7 +13,7 @@ public class CommandList extends Command {
     }
 
     @Override
-    public void execute(String input) {
+    public void execute(String input, Scanner scanner) {
         LibraryItem[] items = new LibraryItem[Library.INVENTORY.getItems().size()];
         printTable(true, Library.INVENTORY.getItems().toArray(items));
         printGeneralHelp();

@@ -2,6 +2,8 @@ package co.grandcircus.library.commands;
 
 import co.grandcircus.library.*;
 
+import java.util.Scanner;
+
 //TODO: Checkout by name or ensure there's an ID provided
 public class CommandCheckOut extends Command {
 
@@ -10,7 +12,7 @@ public class CommandCheckOut extends Command {
     }
 
     @Override
-    public void execute(String input) {
+    public void execute(String input, Scanner scanner) {
         // Get the index of the item we are trying to check out
         int index = parse(input);
 

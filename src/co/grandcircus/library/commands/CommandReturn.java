@@ -2,6 +2,8 @@ package co.grandcircus.library.commands;
 
 import co.grandcircus.library.*;
 
+import java.util.Scanner;
+
 public class CommandReturn extends Command {
 
     public CommandReturn() {
@@ -9,7 +11,7 @@ public class CommandReturn extends Command {
     }
 
     @Override
-    public void execute(String input) {
+    public void execute(String input, Scanner scanner) {
         int index = parse(input);
         try {
             // Try to find the library item at the specified index

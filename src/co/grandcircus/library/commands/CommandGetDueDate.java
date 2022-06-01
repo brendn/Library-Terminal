@@ -2,6 +2,7 @@ package co.grandcircus.library.commands;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Scanner;
 
 import co.grandcircus.library.Command;
 import co.grandcircus.library.Library;
@@ -15,7 +16,7 @@ public class CommandGetDueDate extends Command {
 	}
 
 	@Override
-	public void execute(String input) {
+	public void execute(String input, Scanner scanner) {
 		// Get the index of the item we are trying to check out
         int index = parse(input);
 

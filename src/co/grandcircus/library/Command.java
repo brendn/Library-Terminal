@@ -5,6 +5,7 @@ import co.grandcircus.library.items.DVD;
 import co.grandcircus.library.items.Media;
 
 import java.util.Formatter;
+import java.util.Scanner;
 
 public abstract class Command {
 
@@ -43,7 +44,7 @@ public abstract class Command {
      *
      * @param input The user input.  If the command contains arguments, this will only contain the arguments.
      */
-    public abstract void execute(String input);
+    public abstract void execute(String input, Scanner scanner);
 
     /**
      * Attempts to parse an Integer from the given String.

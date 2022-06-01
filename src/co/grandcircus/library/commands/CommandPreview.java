@@ -8,6 +8,8 @@ import co.grandcircus.library.items.Book;
 import co.grandcircus.library.items.DVD;
 import co.grandcircus.library.items.Media;
 
+import java.util.Scanner;
+
 public class CommandPreview extends Command {
 
 	public CommandPreview() {
@@ -15,7 +17,7 @@ public class CommandPreview extends Command {
 	}
 
 	@Override
-	public void execute(String input) {
+	public void execute(String input, Scanner scanner) {
 		// Get the index of the item we are trying to check out
         int index = parse(input);
 

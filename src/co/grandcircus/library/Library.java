@@ -18,6 +18,7 @@ public class Library {
         COMMANDS.add(new CommandCheckOut());
         COMMANDS.add(new CommandPreview());
         COMMANDS.add(new CommandGetDueDate());
+        COMMANDS.add(new CommandAddItem());
 
         LibraryIO.load();
 
@@ -29,7 +30,11 @@ public class Library {
         String s;
         while (scanner.hasNext()) {
             s = scanner.nextLine();
-            if (!runCommand(s)) {
+            if (getCommand(s) != null) {
+                Command command = getCommand(s);
+                String in = s.split(" ").length > 1 ? s.substring(command.getName().length() + 1) : s;
+                command.execute(in, scanner);
+            } else {
                 System.out.println("ERROR: Command not found!");
                 System.out.println("To view a list of available commands, type 'help'!");
             }
@@ -39,36 +44,22 @@ public class Library {
         scanner.close();
     }
 
-    private static boolean runCommand(String s) {
-            //Input has arguments
-            //return 3 -> [return, 3]
-            if (s.split(" ").length > 1) {
-                for (Command command : COMMANDS) {
-                    // Take the actual command text out of the input
-                    // So 'return 3' -> '3'
-                    // That way when we are working in the execute method we won't have to substring that out
-                    if (command.getName().equalsIgnoreCase(s.split(" ")[0])) {
-                        try {
-                            command.execute(s.substring(command.getName().length() + 1));
-                        } catch (Exception e) {
-                            System.out.println("Error running command. For help, type 'help'!");
-                        }
-                        return true;
-                    }
-                }
-            } else {
-                // No arguments, so we will iterate each command and run it directly
-                for (Command command : COMMANDS) {
-                    if (command.getName().equalsIgnoreCase(s)) {
-                        try {
-                            command.execute(s);
-                        } catch (Exception e) {
-                            System.out.println("Error running command. For help, type 'help'!");
-                        }
-                        return true;
-                    }
+    private static Command getCommand(String in) {
+        if (in.split(" ").length > 1) {
+            String commandName = in.split(" ")[0];
+            for (Command command : COMMANDS) {
+                if (command.getName().equalsIgnoreCase(commandName)) {
+                    return command;
                 }
             }
-        return false;
+        } else {
+            for (Command command : COMMANDS) {
+                if (command.getName().equalsIgnoreCase(in)) {
+                    return command;
+                }
+            }
+        }
+        return null;
     }
+
 }

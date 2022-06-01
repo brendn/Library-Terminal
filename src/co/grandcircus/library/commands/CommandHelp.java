@@ -3,6 +3,8 @@ package co.grandcircus.library.commands;
 import co.grandcircus.library.Command;
 import co.grandcircus.library.Library;
 
+import java.util.Scanner;
+
 public class CommandHelp extends Command {
 
     public CommandHelp() {
@@ -10,7 +12,7 @@ public class CommandHelp extends Command {
     }
 
     @Override
-    public void execute(String input) {
+    public void execute(String input, Scanner scanner) {
         System.out.println("Welcome to the Grand Circus Library!");
         System.out.println("Here's a list of commands you can run:");
         StringBuilder out = new StringBuilder();
