@@ -16,6 +16,11 @@ public class CommandCheckOut extends Command {
         // Get the index of the item we are trying to check out
         int index = parse(input);
 
+        if (index == -1) {
+            System.out.println("ERROR: Item not found!");
+            return;
+        }
+
         // Find the book at the specified index
         LibraryItem book = Library.INVENTORY.getItems().get(index);
 
