@@ -19,6 +19,7 @@ public class Library {
         COMMANDS.add(new CommandPreview());
         COMMANDS.add(new CommandGetDueDate());
         COMMANDS.add(new CommandAddItem());
+        COMMANDS.add(new CommandBlackJack());
 
         LibraryIO.load();
 
