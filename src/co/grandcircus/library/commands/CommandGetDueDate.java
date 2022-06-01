@@ -26,7 +26,6 @@ public class CommandGetDueDate extends Command {
         if (book != null && book.getStatus() == Status.CHECKED_OUT) {
         	DateFormat df = new SimpleDateFormat("MM/dd/yyyy");
         	System.out.println(book.getTitle() + " is due on : " + df.format(book.getDueDate()));
-        	book.getPreview();
         	
         } else {
         	System.out.println("That item is currently on the shelf!");

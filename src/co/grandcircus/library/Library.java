@@ -3,8 +3,6 @@ package co.grandcircus.library;
 import java.util.*;
 
 import co.grandcircus.library.commands.*;
-import co.grandcircus.library.items.Book;
-import co.grandcircus.library.items.DVD;
 
 public class Library {
 

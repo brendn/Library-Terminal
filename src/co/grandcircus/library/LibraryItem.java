@@ -31,6 +31,11 @@ public interface LibraryItem {
     ArrayList<String> getAuthor();
 
     /**
+     * Lists the preview elements
+     */
+    ArrayList<String> getPreview();
+
+    /**
      * Executed every time the item is checked into the library.
      */
     void checkIn();
