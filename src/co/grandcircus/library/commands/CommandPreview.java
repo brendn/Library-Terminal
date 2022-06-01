@@ -10,38 +10,35 @@ import co.grandcircus.library.items.Media;
 
 import java.util.Scanner;
 
+import static co.grandcircus.library.Inventory.getItem;
+
 public class CommandPreview extends Command {
 
 	public CommandPreview() {
-		super("preview", "Preview an item before checking it out. Usage: preview <index>");
+		super("preview", "Preview an item before checking it out. Usage: preview <index> OR preview <name>");
 	}
 
 	@Override
 	public void execute(String input, Scanner scanner) {
-		// Get the index of the item we are trying to check out
-        int index = parse(input);
+		// Find the item at the specified index
+		LibraryItem book = getItem(input);
 
-		if (index == -1) {
+		// Check to see if the item is available to be looked at
+		if (book != null) {
+			if (book.getStatus() == Status.ON_SHELF) {
+				System.out.println("Here's a preview of " + book.getTitle() + ":");
+
+				for (int i = 0; i < book.getPreview().size(); i++) {
+					System.out.println(book.getPreview().get(i));
+				}
+
+			} else {
+				System.out.println("Sorry, that item is currently checked out.");
+				System.out.println("Once it has been returned, you'll be able to skim the contents.");
+			}
+		} else {
 			System.out.println("ERROR: Item not found!");
-			return;
 		}
 
-        // Find the item at the specified index
-        LibraryItem book = Library.INVENTORY.getItems().get(index);
-        
-        // Check to see if the item is available to be looked at
-        if (book != null && book.getStatus() == Status.ON_SHELF) {
-        	System.out.println("Here's a preview of " + book.getTitle() + ":");
-
-			for (int i = 0; i < book.getPreview().size(); i ++) {
-				System.out.println(book.getPreview().get(i));
-			}
-        	
-        } else {
-        	System.out.println("Sorry, that item is currently checked out.");
-        	System.out.println("Once it has been returned, you'll be able to skim the contents.");
-        }
-		
 	}
-
 }

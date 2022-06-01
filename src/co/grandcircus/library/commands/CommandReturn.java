@@ -4,30 +4,27 @@ import co.grandcircus.library.*;
 
 import java.util.Scanner;
 
+import static co.grandcircus.library.Inventory.getItem;
+
 public class CommandReturn extends Command {
 
     public CommandReturn() {
-        super("return", "Returns the specified item.  Usage: return <index>");
+        super("return", "Returns the specified item.  Usage: return <index> OR return <name>");
     }
 
     @Override
     public void execute(String input, Scanner scanner) {
-        int index = parse(input);
-
-        try {
-            // Try to find the library item at the specified index
-            LibraryItem item = Library.INVENTORY.getItems().get(index);
-            if (item != null) {
-                // Check if it's not already on the shelf
-                if (item.getStatus() != Status.ON_SHELF) {
-                    item.checkIn();
-                    System.out.printf("Thanks for returning %s!", item.getTitle());
-                } else {
-                    System.out.println("Sorry, this item is already checked in.");
-                }
+        LibraryItem item = getItem(input);
+        if (item != null) {
+            // Check if it's not already on the shelf
+            if (item.getStatus() != Status.ON_SHELF) {
+                item.checkIn();
+                System.out.printf("Thanks for returning %s!%n", item.getTitle());
+            } else {
+                System.out.println("Sorry, this item is already checked in.");
             }
-        } catch (Exception e) {
-            System.out.println("Error returning item, please try again.");
+        } else {
+            System.out.println("ERROR: Item not found!");
         }
     }
 }

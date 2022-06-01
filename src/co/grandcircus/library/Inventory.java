@@ -6,6 +6,7 @@ import co.grandcircus.library.items.Media;
 
 import java.util.ArrayList;
 import java.util.Formatter;
+import java.util.OptionalInt;
 
 public class Inventory {
 
@@ -30,6 +31,26 @@ public class Inventory {
 
 		}
 		System.out.println(fmt);
+	}
+
+	public static LibraryItem getItem(String s) {
+		int index;
+		try {
+			index = Integer.parseInt(s);
+		} catch (Exception e) {
+			index = -1;
+		}
+		boolean id = index != -1;
+		if (id) {
+			return Library.INVENTORY.getItems().get(index);
+		} else {
+			for (LibraryItem item : Library.INVENTORY.getItems()) {
+				if (item.getTitle().equalsIgnoreCase(s)) {
+					return item;
+				}
+			}
+		}
+		return null;
 	}
 
 	public static LibraryItem findItem(String input) {

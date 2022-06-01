@@ -4,26 +4,17 @@ import co.grandcircus.library.*;
 
 import java.util.Scanner;
 
-//TODO: Checkout by name or ensure there's an ID provided
+import static co.grandcircus.library.Inventory.getItem;
+
 public class CommandCheckOut extends Command {
 
     public CommandCheckOut() {
-        super("checkout", "Checks out the specified book.  Usage: checkout <index>");
+        super("checkout", "Checks out the specified book.  Usage: checkout <index> OR checkout <name>");
     }
 
     @Override
     public void execute(String input, Scanner scanner) {
-        // Get the index of the item we are trying to check out
-        int index = parse(input);
-
-        if (index == -1) {
-            System.out.println("ERROR: Item not found!");
-            return;
-        }
-
-        // Find the book at the specified index
-        LibraryItem book = Library.INVENTORY.getItems().get(index);
-
+        LibraryItem book = getItem(input);
         if (book != null) {
             // Check if the book is on shelf.
             if (book.getStatus() == Status.ON_SHELF) {
@@ -34,6 +25,8 @@ public class CommandCheckOut extends Command {
                 // Otherwise let the user know it has already been checked out
                 System.out.println("Sorry, this book is already checked out.");
             }
+        } else {
+            System.out.println("ERROR: Item not found!");
         }
     }
 }
