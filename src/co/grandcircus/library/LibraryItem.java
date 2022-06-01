@@ -28,7 +28,7 @@ public interface LibraryItem {
     /**
      * Return the Due Date for a given item.
      */
-    ArrayList<String> getAuthor();
+    ArrayList<String> getAuthors();
 
     /**
      * Lists the preview elements

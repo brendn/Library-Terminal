@@ -26,7 +26,7 @@ public class Inventory {
 		for (int i = 0; i< items.size(); i++){
 			LibraryItem item = items.get(i);
 			String type = item instanceof Book ? "Book" : item instanceof DVD ? "DVD" : item instanceof Media ? "Media" : "";
-			fmt.format("%10d %40s %40s %40s %40s\n", Library.INVENTORY.getItems().indexOf(item), item.getTitle(), item.getAuthor(), item.getStatus(), type);
+			fmt.format("%10d %40s %40s %40s %40s\n", Library.INVENTORY.getItems().indexOf(item), item.getTitle(), item.getAuthors(), item.getStatus(), type);
 
 		}
 		System.out.println(fmt);
@@ -56,7 +56,7 @@ public class Inventory {
 		LibraryItem[] booksSearchedByAuthor = new LibraryItem[100];
 		int index=0;
 		for (int i = 0; i< items.size(); i++){
-			if(items.get(i).getAuthor().get(0).equals(author)){
+			if(items.get(i).getAuthors().get(0).equals(author)){
 				booksSearchedByAuthor[index]= items.get(i);
 				index++;
 			}

@@ -40,7 +40,7 @@ public class LibraryIO {
             if (item instanceof Book) {
                 Book book = (Book) item;
                 String title = "<book name=\"" + book.getTitle() +"\">";
-                String author = "<author>" + book.getAuthor().get(0) + "</author>";
+                String author = "<author>" + book.getAuthors().get(0) + "</author>";
                 String status = "<status>" + book.getStatus() + "</status>";
                 String condition = "<condition>" + book.getCondition() + "</condition>";
                 System.out.println(title);
@@ -57,7 +57,7 @@ public class LibraryIO {
             if (item instanceof DVD) {
                 DVD dvd = (DVD) item;
                 String title = "<dvd name=\"" + dvd.getTitle() +"\">";
-                String author = "<author>" + dvd.getAuthor().get(0) + "</author>";
+                String author = "<author>" + dvd.getAuthors().get(0) + "</author>";
                 String status = "<status>" + dvd.getStatus() + "</status>";
                 String runtime = "<runtime>" + dvd.getRunTime() + "</runtime>";
                 System.out.println(title);
@@ -104,7 +104,7 @@ public class LibraryIO {
                 // Get the condition of the book
                 int condition = Integer.parseInt(getTextValue(element, "condition"));
 
-                Library.INVENTORY.addItem(new Book(name, authors, status, condition));
+                Library.INVENTORY.addItem(new Book(name, authors, status, condition, preview));
             }
         }
     }

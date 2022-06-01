@@ -25,7 +25,10 @@ public class CommandPreview extends Command {
         // Check to see if the item is available to be looked at
         if (book != null && book.getStatus() == Status.ON_SHELF) {
         	System.out.println("Here's a preview of " + book.getTitle() + ":");
-        	book.getPreview();
+
+			for (int i = 0; i < book.getPreview().size(); i ++) {
+				System.out.println(book.getPreview().get(i));
+			}
         	
         } else {
         	System.out.println("Sorry, that item is currently checked out.");

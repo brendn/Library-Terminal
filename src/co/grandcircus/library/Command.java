@@ -66,7 +66,7 @@ public abstract class Command {
         for (LibraryItem item : items) {
             if (item != null) {
                 String type = item instanceof Book ? "Book" : item instanceof DVD ? "DVD" : item instanceof Media ? "Media" : "";
-                fmt.format("%-5d %-40s %-30s %-15s %-15s\n", Library.INVENTORY.getItems().indexOf(item), item.getTitle(), item.getAuthor(), item.getStatus(), type);
+                fmt.format("%-5d %-40s %-30s %-15s %-15s\n", Library.INVENTORY.getItems().indexOf(item), item.getTitle(), item.getAuthors(), item.getStatus(), type);
             }
         }
 

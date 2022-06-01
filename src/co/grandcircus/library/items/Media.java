@@ -46,9 +46,6 @@ public abstract class Media implements LibraryItem {
 	}
 	
 	public ArrayList<String> getPreview() {
-		for (int i = 0; i < preview.size(); i ++) {
-			System.out.println(preview.get(i));
-		}
 		return preview;
 	}
 	
@@ -57,7 +54,7 @@ public abstract class Media implements LibraryItem {
 	}
 
 	@Override
-	public ArrayList<String> getAuthor() {
+	public ArrayList<String> getAuthors() {
 		return null;
 	}
 	

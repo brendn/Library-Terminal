@@ -13,37 +13,37 @@ import java.util.List;
 public class Book implements LibraryItem {
 
 	private final String title;
-	private final ArrayList<String> author;
+	private final ArrayList<String> authors;
 	private Status status;
 	private int condition;
 	private Date dueDate = null;
 	private ArrayList<String> preview;
 
-	public Book(String title, String author, Status status, int condition, ArrayList<String> preview) {
+	public Book(String title, ArrayList<String> authors, Status status, int condition, ArrayList<String> preview) {
 		this.title = title;
-		this.author = new ArrayList<>(List.of(author));
+		this.authors = authors;
 		this.status = status;
 		this.condition = condition;
 		this.preview = preview;
 	}
 	
-	public Book(String title, ArrayList<String> author, Status status, int condition) {
+	public Book(String title, ArrayList<String> authors, Status status, int condition) {
 		this.title = title;
-		this.author = author;
+		this.authors = authors;
 		this.status = status;
 		this.condition = condition;
 	}
 
-	public Book(String title, String author, Status status) {
-		this(title, new ArrayList<>(List.of(author)), status, 10);
+	public Book(String title, String authors, Status status) {
+		this(title, new ArrayList<>(List.of(authors)), status, 10);
 	}
 
-	public Book(String title, String author, Status status, int condition) {
-		this(title, new ArrayList<>(List.of(author)), status, condition);
+	public Book(String title, String authors, Status status, int condition) {
+		this(title, new ArrayList<>(List.of(authors)), status, condition);
 	}
 
-	public Book(String title, ArrayList<String> author, Status status) {
-		this(title, author, status, 10);
+	public Book(String title, ArrayList<String> authors, Status status) {
+		this(title, authors, status, 10);
 	}
 
 	public void checkIn() {
@@ -69,8 +69,8 @@ public class Book implements LibraryItem {
 		return title;
 	}
 
-	public ArrayList<String> getAuthor() {
-		return author;
+	public ArrayList<String> getAuthors() {
+		return authors;
 	}
 
 	public Status getStatus() {
@@ -97,4 +97,7 @@ public class Book implements LibraryItem {
 		return preview;
 	}
 
+	public void setPreview(ArrayList<String> preview) {
+		this.preview = preview;
+	}
 }

@@ -40,7 +40,7 @@ public class DVD extends Media {
 	}
 
 	@Override
-	public ArrayList<String> getAuthor() {
+	public ArrayList<String> getAuthors() {
 		return new ArrayList<>(List.of(director));
 	}
 
