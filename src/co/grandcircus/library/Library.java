@@ -21,6 +21,7 @@ public class Library {
         COMMANDS.add(new CommandBlackJack());
         COMMANDS.add(new CommandDonate());
         COMMANDS.add(new CommandEmail());
+        COMMANDS.add(new CommandRemoveEmail());
 
 
         LibraryIO.load();
