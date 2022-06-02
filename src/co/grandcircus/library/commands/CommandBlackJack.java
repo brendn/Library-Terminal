@@ -12,7 +12,7 @@ import co.grandcircus.library.blackjack.Player;
 public class CommandBlackJack extends Command {
 
 	public CommandBlackJack() {
-		super("playgame", "Hop on a computer and play a game!");
+		super("playgame", "Relax, hop on a computer and play a game!");
 	}
 
 	@Override

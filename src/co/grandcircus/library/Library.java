@@ -20,6 +20,7 @@ public class Library {
         COMMANDS.add(new CommandGetDueDate());
         COMMANDS.add(new CommandBlackJack());
         COMMANDS.add(new CommandDonate());
+        COMMANDS.add(new CommandEmail());
 
 
         LibraryIO.load();
@@ -73,5 +74,7 @@ public class Library {
         System.out.println(" `----------`-'----------'");
         System.out.println();
     }
+    
+    public static ArrayList<String> emailList = new ArrayList<>();
 
 }
