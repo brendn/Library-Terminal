@@ -4,7 +4,10 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Scanner;
 
+import co.grandcircus.library.commands.CommandEmail;
+import co.grandcircus.library.commands.CommandRemoveEmail;
 import co.grandcircus.library.items.Book;
 import org.junit.jupiter.api.Test;
 
@@ -95,6 +98,51 @@ public class Tests {
 		Book book = new Book("Hitchiker's Guide To The Galaxy", "Douglas Adams", Status.ON_SHELF, 1);
 		Date expected = null;
 		Date actual = book.getDueDate();
+		assertEquals(expected, actual);
+	}
+	
+	@Test
+	void addToMailingListTest() {
+		Scanner scnr = new Scanner(System.in);
+		CommandEmail commandEmail = new CommandEmail();
+		commandEmail.execute("nickr1@gmail.com", scnr);
+		int actual = Library.emailList.size();
+		int expected = 1;
+		assertEquals(expected, actual);
+		Library.emailList.remove(0);
+	}
+	
+	@Test
+	void addToMailingListTest2() {
+		Scanner scnr = new Scanner(System.in);
+		CommandEmail commandEmail = new CommandEmail();
+		commandEmail.execute("nick@gmail.com", scnr);
+		int actual = Library.emailList.size();
+		int expected = 0;
+		assertEquals(expected, actual);
+	}
+	
+	@Test
+	void removeFromMailingListTest() {
+		Scanner scnr = new Scanner(System.in);
+		CommandEmail commandEmail = new CommandEmail();
+		commandEmail.execute("nickr@gmail.com", scnr);
+		CommandRemoveEmail commandRemoveEmail = new CommandRemoveEmail();
+		commandRemoveEmail.execute("nickr@gmail.com", scnr);
+		int actual = Library.emailList.size();
+		int expected = 0;
+		assertEquals(expected, actual);
+	}
+	
+	@Test
+	void removeFromMailingListTest2() {
+		Scanner scnr = new Scanner(System.in);
+		CommandEmail commandEmail = new CommandEmail();
+		commandEmail.execute("nickr234@gmail.com", scnr);
+		CommandRemoveEmail commandRemoveEmail = new CommandRemoveEmail();
+		commandRemoveEmail.execute("nickr234@gmail.com", scnr);
+		int actual = Library.emailList.size();
+		int expected = 0;
 		assertEquals(expected, actual);
 	}
 	
