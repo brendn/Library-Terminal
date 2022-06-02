@@ -24,7 +24,7 @@ public class Library {
 
         LibraryIO.load();
 
-        System.out.println("Welcome to the Grand Circus Library!");
+        printLogo();
         System.out.printf("We currently have %d items. To see what we have, type 'list'!%n", INVENTORY.getItems().size());
         System.out.println("To search for an item, type 'search <author/director>' or 'search <title>'..");
         System.out.println("To see a full list of available commands, type 'help'.");
@@ -62,6 +62,16 @@ public class Library {
             }
         }
         return null;
+    }
+
+    private static void printLogo() {
+        System.out.println("       ______ ______");
+        System.out.println("     _/      Y      \\_");
+        System.out.println("    // ~~ ~~ | ~~ ~  \\\\ \tWelcome to the");
+        System.out.println("   // ~ ~ ~~ | ~~~ ~~ \\\\ \tGrand Circus Library!");
+        System.out.println("  //________.|.________\\\\");
+        System.out.println(" `----------`-'----------'");
+        System.out.println();
     }
 
 }
