@@ -14,20 +14,13 @@ public abstract class Media implements LibraryItem {
 	//0. Actual front cover image description
 	//1. Quote from the book/DVD/etc
 	//2. Quote from the actual back cover
-	
-	
-	public Media() {
-		super();
-	}
-	
+
 	public Media(String title, Status status) {
-		super();
 		this.title = title;
 		this.status = status;
 	}
 	
 	public Media(String title, Status status, ArrayList<String> preview) {
-		super();
 		this.title = title;
 		this.status = status;
 		this.setPreview(preview);

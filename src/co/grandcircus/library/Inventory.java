@@ -6,7 +6,6 @@ import co.grandcircus.library.items.Media;
 
 import java.util.ArrayList;
 import java.util.Formatter;
-import java.util.OptionalInt;
 
 public class Inventory {
 

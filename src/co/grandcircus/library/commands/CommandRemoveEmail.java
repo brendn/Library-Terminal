@@ -20,13 +20,11 @@ public class CommandRemoveEmail extends Command {
 				System.out.println("Sorry to see you go!");
 				System.out.println("We have successfully removed " + input + " from our mailing list.");
 				findEmail = true;
-			} 
+			}
 		}
-		if (findEmail == false || Library.emailList == null) {
+		if (!findEmail) {
 			System.out.println("Sorry, we couldn't find that email in our database.");
 		}
-		
-		
 	}
 
 }

@@ -9,7 +9,6 @@ public class CommandEmail extends Command {
 
 	public CommandEmail() {
 		super("addemail", "Add your email address to join our mailing list! Usage: addemail <email-address>");
-		
 	}
 
 	@Override
@@ -19,16 +18,11 @@ public class CommandEmail extends Command {
 		if (input.matches(emailRegex)) {
 			System.out.println("Successfully added to our mailing list!");
 			Library.emailList.add(input);
-			
-				System.out.println(input);
-			
+			System.out.println(input);
 			System.out.println();
 		} else {
 			System.out.println("Sorry, that was not a valid entry.\n");
-			
 		}
-	
-		
 	}
 
 }

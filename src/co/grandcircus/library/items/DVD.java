@@ -1,7 +1,6 @@
 package co.grandcircus.library.items;
 
 import co.grandcircus.library.Status;
-import co.grandcircus.library.items.Media;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -9,25 +8,12 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
-import java.util.Scanner;
 
 public class DVD extends Media {
 	
 	private int runTime;
 	private String director;
 	private Date dueDate = null;
-
-	public DVD() {
-		super();
-	}
-
-	public DVD(String title, Status status) {
-		super(title, status);
-	}
-	
-	public DVD(String title, Status status, ArrayList<String> preview) {
-		super(title, status, preview);
-	}
 	
 	public DVD(String title, Status status, ArrayList<String> preview, int runTime, String director) {
 		super(title, status, preview);
