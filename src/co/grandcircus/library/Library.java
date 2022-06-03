@@ -22,7 +22,7 @@ public class Library {
         COMMANDS.add(new CommandDonate());
         COMMANDS.add(new CommandEmail());
         COMMANDS.add(new CommandRemoveEmail());
-
+        COMMANDS.add(new CommandExit());
 
         LibraryIO.load();
 
@@ -30,9 +30,10 @@ public class Library {
         System.out.printf("We currently have %d items. To see what we have, type 'list'!%n", INVENTORY.getItems().size());
         System.out.println("To search for an item, type 'search <author/director>' or 'search <title>'..");
         System.out.println("To see a full list of available commands, type 'help'.");
+        System.out.println("To exit, type 'exit'.");
 
-        String s;
-        while (scanner.hasNext()) {
+        String s = "";
+        while (!s.equalsIgnoreCase("exit") && scanner.hasNext()) {
             s = scanner.nextLine();
             if (getCommand(s) != null) {
                 Command command = getCommand(s);
@@ -45,6 +46,7 @@ public class Library {
         }
         
         System.out.println("Goodbye!");
+        LibraryIO.saveAll();
         scanner.close();
     }
 
