@@ -2,6 +2,7 @@ package co.grandcircus.library.commands;
 
 import co.grandcircus.library.Command;
 import co.grandcircus.library.Library;
+import co.grandcircus.library.LibraryIO;
 import co.grandcircus.library.Status;
 import co.grandcircus.library.items.Book;
 
@@ -40,6 +41,7 @@ public class CommandDonate extends Command {
                 new ArrayList<>(List.of(previewFront, previewInner, previewBack)));
 
         Library.INVENTORY.addItem(book);
+        LibraryIO.saveAll();
         System.out.println("Thank you for your donation!");
     }
 }
