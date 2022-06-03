@@ -16,12 +16,11 @@ public class CommandEmail extends Command {
 		//this String is the regex validation that we will test user email addresses with
 		String emailRegex = "[A-z0-9]{5,30}@[A-z0-9]{3,10}\\.[A-z0-9]{2,3}";
 		if (input.matches(emailRegex)) {
-			System.out.println("Successfully added to our mailing list!");
+			print("Successfully added to our mailing list!");
 			Library.emailList.add(input);
-			System.out.println(input);
-			System.out.println();
+			print(input);
 		} else {
-			System.out.println("Sorry, that was not a valid entry.\n");
+			print("Sorry, that was not a valid entry.\n");
 		}
 	}
 

@@ -70,7 +70,7 @@ public class CommandBlackJack extends Command {
 		System.out.println();
 		System.out.println("To see what we have, type 'list'!");
 		System.out.println("To search for an item, type 'search <author/director>' or 'search <title>'");
-		System.out.println("To preview an item, type 'preview <index>'");
+		System.out.println("To preview an item, type 'preview <index> OR preview <title>'");
 		System.out.println("For a list of all commands, type 'help'");
 
 	}

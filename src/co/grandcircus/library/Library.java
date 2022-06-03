@@ -60,7 +60,7 @@ public class Library {
             }
         } else {
             for (Command command : COMMANDS) {
-                if (command.getName().equalsIgnoreCase(in)) {
+                if (command.getName().equalsIgnoreCase(in.replaceAll(" ", ""))) {
                     return command;
                 }
             }

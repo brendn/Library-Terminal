@@ -15,7 +15,7 @@ import static co.grandcircus.library.Inventory.getItem;
 public class CommandPreview extends Command {
 
 	public CommandPreview() {
-		super("preview", "Preview an item before checking it out. Usage: preview <index> OR preview <name>");
+		super("preview", "Preview an item before checking it out. Usage: preview <index> OR preview <title>");
 	}
 
 	@Override
@@ -26,16 +26,16 @@ public class CommandPreview extends Command {
 		// Check to see if the item is available to be looked at
 		if (book != null) {
 			if (book.getStatus() == Status.ON_SHELF) {
-				System.out.println("Here's a preview of " + book.getTitle() + ":");
+				print("Here's a preview of " + book.getTitle() + ":");
 				for (int i = 0; i < book.getPreview().size(); i++) {
-					System.out.println(book.getPreview().get(i));
+					print(book.getPreview().get(i));
 				}
 			} else {
-				System.out.println("Sorry, that item is currently checked out.");
-				System.out.println("Once it has been returned, you'll be able to skim the contents.");
+				print("Sorry, that item is currently checked out.");
+				print("Once it has been returned, you'll be able to skim the contents.");
 			}
 		} else {
-			System.out.println("ERROR: Item not found!");
+			print("ERROR: Item not found!");
 		}
 
 	}

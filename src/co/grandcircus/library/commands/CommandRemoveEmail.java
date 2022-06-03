@@ -17,13 +17,13 @@ public class CommandRemoveEmail extends Command {
 		for (int i = 0; i < Library.emailList.size(); i++) {
 			if (input.equalsIgnoreCase(Library.emailList.get(i))) {
 				Library.emailList.remove(i);
-				System.out.println("Sorry to see you go!");
-				System.out.println("We have successfully removed " + input + " from our mailing list.");
+				print("Sorry to see you go!");
+				print("We have successfully removed " + input + " from our mailing list.");
 				findEmail = true;
 			}
 		}
 		if (!findEmail) {
-			System.out.println("Sorry, we couldn't find that email in our database.");
+			print("Sorry, we couldn't find that email in our database.");
 		}
 	}
 

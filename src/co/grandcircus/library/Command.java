@@ -60,6 +60,14 @@ public abstract class Command {
         }
     }
 
+    protected void print(Object s) {
+        System.out.println(s);
+    }
+
+    protected void printf(String format, Object... o) {
+        System.out.printf(format, o);
+    }
+
     protected void printTable(LibraryItem... items) {
         Formatter fmt = new Formatter();
         fmt.format("%-5s %-40s %-30s %-15s %-15s\n", "ID", "NAME", "AUTHOR/DIRECTOR", "STATUS", "TYPE");
@@ -71,13 +79,14 @@ public abstract class Command {
             }
         }
 
-        System.out.println(fmt);
+        print(fmt);
     }
 
     protected void printGeneralHelp() {
-        System.out.printf("We currently have %d items. To see what we have, type 'list'!%n", Library.INVENTORY.getItems().size());
-        System.out.println("To search for an item, type 'search <author/director>' or 'search <title>'..");
-        System.out.println("To preview an item, type 'preview <index>'");
+        printf("We currently have %d items. To see what we have, type 'list'!%n", Library.INVENTORY.getItems().size());
+        print("To search for an item, type 'search <author/director>' or 'search <title>'..");
+        print("To preview an item, type 'preview <index> OR preview <title>'");
+        print("To exit, type 'exit'");
     }
 }
 

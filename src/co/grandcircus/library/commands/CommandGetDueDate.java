@@ -9,6 +9,8 @@ import co.grandcircus.library.Library;
 import co.grandcircus.library.LibraryItem;
 import co.grandcircus.library.Status;
 
+import static co.grandcircus.library.Inventory.getItem;
+
 public class CommandGetDueDate extends Command {
 
 	public CommandGetDueDate() {
@@ -17,26 +19,21 @@ public class CommandGetDueDate extends Command {
 
 	@Override
 	public void execute(String input, Scanner scanner) {
-		// Get the index of the item we are trying to check out
-        int index = parse(input);
+        // Find the item at the specified index
+        LibraryItem book = getItem(input);
 
-		if (index == -1) {
-			System.out.println("ERROR: Item not found!");
+		if (book == null) {
+			print("ERROR: Item not found!");
 			return;
 		}
-
-        // Find the item at the specified index
-        LibraryItem book = Library.INVENTORY.getItems().get(index);
         
         // Check to see if the item is available to be looked at
-        if (book != null && book.getStatus() == Status.CHECKED_OUT) {
+        if (book.getStatus() == Status.CHECKED_OUT) {
         	DateFormat df = new SimpleDateFormat("MM/dd/yyyy");
-        	System.out.println(book.getTitle() + " is due on : " + df.format(book.getDueDate()));
-        	
+        	print(book.getTitle() + " is due on : " + df.format(book.getDueDate()));
         } else {
-        	System.out.println("That item is currently on the shelf!");
+			print("That item is currently on the shelf!");
         }
-		
 	}
 
 }

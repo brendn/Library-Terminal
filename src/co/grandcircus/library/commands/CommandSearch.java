@@ -25,7 +25,7 @@ public class CommandSearch extends Command {
                 printTable(item);
                 printGeneralHelp();
             } else {
-                System.out.println("Sorry, no results found. Type 'list' to see a list of our items.");
+                print("Sorry, no results found. Type 'list' to see a list of our items.");
             }
         }
     }

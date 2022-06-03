@@ -19,12 +19,12 @@ public class CommandReturn extends Command {
             // Check if it's not already on the shelf
             if (item.getStatus() != Status.ON_SHELF) {
                 item.checkIn();
-                System.out.printf("Thanks for returning %s!%n", item.getTitle());
+                printf("Thanks for returning %s!%n", item.getTitle());
             } else {
-                System.out.println("Sorry, this item is already checked in.");
+                print("Sorry, this item is already checked in.");
             }
         } else {
-            System.out.println("ERROR: Item not found!");
+            print("ERROR: Item not found!");
         }
     }
 }

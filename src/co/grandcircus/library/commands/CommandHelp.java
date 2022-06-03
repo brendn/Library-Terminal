@@ -13,12 +13,12 @@ public class CommandHelp extends Command {
 
     @Override
     public void execute(String input, Scanner scanner) {
-        System.out.println("Welcome to the Grand Circus Library!");
-        System.out.println("Here's a list of commands you can run:");
+        print("Welcome to the Grand Circus Library!");
+        print("Here's a list of commands you can run:");
         StringBuilder out = new StringBuilder();
         Library.COMMANDS.forEach(command -> {
             out.append("\t").append(command.getName()).append(" - ").append(command.getHelp()).append("\n");
         });
-        System.out.println(out);
+        print(out);
     }
 }

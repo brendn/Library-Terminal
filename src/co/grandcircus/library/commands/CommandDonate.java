@@ -19,21 +19,21 @@ public class CommandDonate extends Command {
     @Override
     public void execute(String input, Scanner scanner) {
         // Get the book name
-        System.out.println("Please enter the name of the book you would like to donate:");
+        print("Please enter the name of the book you would like to donate:");
         String bookName = scanner.nextLine();
 
         // Get the authors
-        System.out.println("Please enter the author(s) of the book (separated by comma):");
+        print("Please enter the author(s) of the book (separated by comma):");
         String in = scanner.nextLine();
         // Just in case user separates authors "like,this" and not "like, this"
         String[] authors = in.split(", ").length > 1 ? in.split(", ") : in.split(",");
 
         // Preview info
-        System.out.println("Describe the front cover:");
+        print("Describe the front cover:");
         String previewFront = scanner.nextLine();
-        System.out.println("Describe the inner cover:");
+        print("Describe the inner cover:");
         String previewInner = scanner.nextLine();
-        System.out.println("Describe the back of the book:");
+        print("Describe the back of the book:");
         String previewBack = scanner.nextLine();
 
         // Create the book object and add it to the library inventory
@@ -42,6 +42,6 @@ public class CommandDonate extends Command {
 
         Library.INVENTORY.addItem(book);
         LibraryIO.saveAll();
-        System.out.println("Thank you for your donation!");
+        print("Thank you for your donation!");
     }
 }
